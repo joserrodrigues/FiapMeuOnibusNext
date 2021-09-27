@@ -6,11 +6,11 @@ import HomeView from './HomeView'
 import HomeModel from './HomeModel';
 
 
-const HomeController = () => {
+const HomeController = ({ preBusLines }) => {
 
     //Inicia os states
     const [searchText, setSearchText] = useState('');
-    const [busLines, setBusLines] = useState([]);
+    const [busLines, setBusLines] = useState(preBusLines);
     const [isConnectingSearchBusLines, setIsConnectingSearchBusLines] = useState(false);
     const [searchBusLinesWithSuccess, setSearchBusLinesWithSuccess] = useState(0);
     const homeModel = useRef(null);
@@ -19,6 +19,10 @@ const HomeController = () => {
         //Inicializa o model
         homeModel.current = new HomeModel();
     }, [])
+
+    useEffect(() => {
+        setBusLines(preBusLines);
+    }, [preBusLines])
 
     //função que é chamada quando o texto do search é chamado
     const onTextChange = (e) => {
