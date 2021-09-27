@@ -1,0 +1,19 @@
+.TitleBuslineItem{
+    color: #999999 !important;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+.TextBuslineItem{
+    color: #333333;
+    font-weight: bold;
+}
+
+.busIconCol{
+    text-align: center;
+}
+
+.busIcon{
+    color: #E8A2A2;
+    font-size: 30px;
+}
